@@ -22,3 +22,9 @@ Os PDFs originais não são redistribuídos. O conteúdo de revisão e as quest�
 ## Publicação
 
 Site estático sem dependências. GitHub Pages publica a raiz da branch `main`.
+
+## Simulado interativo
+
+Uma questão por vez, alternativas clicáveis com correção automática, respostas escritas com autoavaliação, filtros por disciplina e pendências, revisão de erros e progresso salvo somente no navegador. O reinício exige confirmação. A impressão inclui a versão completa em texto.
+
+Testado no navegador em tela ampla e largura de celular: seleção/correção, escrita/autoavaliação, filtros, persistência após recarga e cancelamento de reinício.
