@@ -2,7 +2,7 @@
 
 [Abrir site](https://linconclass.github.io/revisao-estacio-7p/#treino)
 
-Resumos de cinco disciplinas e **150 questões autorais, todas de múltipla escolha**: 30 por matéria, organizadas em cinco temas por matéria, baseadas no material local disponível. Os PDFs originais não são redistribuídos.
+Resumos de cinco disciplinas e **165 questões autorais, todas de múltipla escolha**: 33 por matéria, organizadas em cinco temas por matéria, baseadas no material local disponível. Os PDFs originais não são redistribuídos.
 
 ## Como usar
 
@@ -28,10 +28,10 @@ Referências:
 ## Arquivos
 
 - `index.html`, `quiz.css`: página de revisão e interface do treino.
-- `quiz-data.js`: 150 questões, quatro alternativas, tema e explicação.
+- `quiz-data.js`: 165 questões, quatro alternativas, tema e explicação.
 - `quiz-engine.js`: seleção, embaralhamento e regras de prioridade.
 - `quiz.js`: navegação, correção, histórico e apresentação.
-- `banco-150-questoes.md`: alternativa textual, com gabaritos.
+- `banco-165-questoes.md`: alternativa textual, com gabaritos.
 - `guia-intensivo-estacio.md`: resumos e exercícios resolvidos.
 - `fontes-e-cobertura.md`: relação e limites das apostilas consultadas.
 
@@ -46,3 +46,13 @@ Verificado no navegador: migração do histórico anterior, ausência de campos 
 ## Publicação
 
 Site estático sem dependências, servido pelo GitHub Pages a partir da raiz de `main`. Questões e explicações são autorais; não são o banco oficial da Estácio. Datas e horários foram fornecidos pelo estudante.
+
+## Navegação e pesquisa pública (10/11/2026)
+
+Barra fixa com acesso direto a Simulado, matérias e Fontes públicas. Em celular, Simulado permanece visível e o menu das matérias abre separadamente, fechando após a navegação. Âncoras reservam espaço para a barra.
+
+A pesquisa está em `pesquisa-avaliacoes.md` e na seção Fontes públicas. Foram incluídas 15 adaptações (três por matéria), com referência ao upload público e indicação de conferência no feedback. Fontes e perguntas ficam em `scripts/public-sources.json` e `scripts/public-questions.json`.
+
+Os registros encontrados são de terceiros, com transcrições atribuídas à Estácio. Cabeçalhos, títulos e respostas não equivalem a autenticação institucional. As questões do site têm redação própria e foram conferidas nas apostilas e, quando indicado, na documentação primária. Trechos incompletos, alternativas duplicadas e generalizações técnicas não foram incorporados como gabaritos oficiais.
+
+Validação adicional: 165 questões / 33 por disciplina, quatro alternativas distintas, 15 questões com referência válida; navegação fixa a partir do fim da página; menu móvel e seu fechamento; ausência de transbordamento horizontal; correção e exibição de referência numa adaptação de JSON.

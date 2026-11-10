@@ -78,17 +78,21 @@ for row in rows:
  parts=row.split('~');assert len(parts)==8,(len(parts),row[:80])
  g,t,p,c,w1,w2,w3,e=parts;counts[g]+=1
  old.append({'id':g+str(counts[g]),'group':g,'subject':next(q['subject'] for q in old if q['group']==g),'topic':int(t),'html':'<p>'+html.escape(p)+'</p>','options':[html.escape(x) for x in [c,w1,w2,w3]],'correct':0,'explain':e,'type':'choice'})
-assert len(old)==150,len(old)
+old += json.loads((repo/'scripts/public-questions.json').read_text(encoding='utf-8'))
+assert len(old)==165,len(old)
 assert all(len(q['options'])==4 and len(set(q['options']))==4 for q in old)
 assert all(len([q for q in old if q['group']==g and q['topic']==t])>=5 for g in topics for t in range(5))
-(repo/'quiz-data.js').write_text('window.QUIZ_TOPICS='+json.dumps(topics,ensure_ascii=False)+';\nwindow.QUIZ_DATA='+json.dumps(old,ensure_ascii=False).replace('</','<\\/')+';',encoding='utf-8')
+(repo/'quiz-data.js').write_text('window.QUIZ_SOURCES='+json.dumps(json.loads((repo/'scripts/public-sources.json').read_text(encoding='utf-8')),ensure_ascii=False)+';\nwindow.QUIZ_TOPICS='+json.dumps(topics,ensure_ascii=False)+';\nwindow.QUIZ_DATA='+json.dumps(old,ensure_ascii=False).replace('</','<\\/')+';',encoding='utf-8')
 # A text alternative also contains only multiple choice.
-text=['# Banco de revisão — 150 questões de múltipla escolha','','Questões autorais; não são exercícios oficiais da Estácio. No site, perguntas e alternativas são sorteadas por rodada.','']
+text=['# Banco de revisão — 165 questões de múltipla escolha','','Questões autorais; não são exercícios oficiais da Estácio. No site, perguntas e alternativas são sorteadas por rodada.','']
 for g in topics:
  text+=['## '+next(q['subject'] for q in old if q['group']==g),'']
  for q in [x for x in old if x['group']==g]:
   text+=['### '+q['id']+' · '+topics[g][q['topic']],re.sub('<[^>]+>','',html.unescape(q['html'])),'']
   text += [f'{chr(65+i)}) '+html.unescape(re.sub('<[^>]+>','',o)) for i,o in enumerate(q['options'])]
   text+=['',f'**Gabarito: {chr(65+q["correct"])}.** '+q['explain'],'']
-(repo/'banco-150-questoes.md').write_text('\n'.join(text),encoding='utf-8')
-print('Banco validado:',len(old),'questões; 30 por matéria; 5 temas por matéria.')
+  if q.get('sourceId'):
+   src=next(x for x in json.loads((repo/'scripts/public-sources.json').read_text(encoding='utf-8')) if x['id']==q['sourceId'])
+   text+=['Adaptação autoral a partir de [registro público]('+src['url']+'). Conferência: '+q['validation'],'']
+(repo/'banco-165-questoes.md').write_text('\n'.join(text),encoding='utf-8')
+print('Banco validado:',len(old),'questões; 33 por matéria; 15 adaptações com origem documentada.')

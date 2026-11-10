@@ -1,5 +1,3 @@
-# O simulado foi atualizado
+# Simulado atualizado
 
-Agora há 150 questões, todas de múltipla escolha, com rodadas por tema e alternativas embaralhadas.
-
-[Abrir simulado interativo](https://linconclass.github.io/revisao-estacio-7p/#treino) · [Abrir banco completo com gabarito](banco-150-questoes.md)
+[Abra o simulado interativo](https://linconclass.github.io/revisao-estacio-7p/#treino) ou o [banco de 165 questões](banco-165-questoes.md). Todas as questões são de múltipla escolha.

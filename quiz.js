@@ -1,6 +1,6 @@
 (() => {
 'use strict';
-const data=window.QUIZ_DATA, topics=window.QUIZ_TOPICS, engine=window.StudyEngine;
+const data=window.QUIZ_DATA, topics=window.QUIZ_TOPICS, engine=window.StudyEngine; const publicSources=new Map((window.QUIZ_SOURCES||[]).map(s=>[s.id,s]));
 const $=id=>document.getElementById(id), byId=new Map(data.map(q=>[q.id,q]));
 const KEY='estacio-study-v2';
 const base={history:{},session:null,previous:[],config:{group:'N',topic:'all',mode:'smart',size:10}};
@@ -89,7 +89,7 @@ function render(focus=false){focusNext=focus;const status=stats(),s=store.sessio
  if(!exam){const check=btn('Confirmar resposta','quiz-primary',()=>{grade(item,q);save();render(true);});check.id='check-answer';check.disabled=item.selected===null;const controls=document.createElement('div');controls.className='question-controls';controls.append(check);card.append(controls);}}
  if(locked){const feedback=document.createElement('div');feedback.className='quiz-feedback '+(item.correct?'correct':'review');feedback.setAttribute('role','status');const h=document.createElement('h4');h.textContent=item.correct?(item.confidence==='unsure'?'Acertou, mas vale retomar a dúvida':'Resposta correta'):'Vamos corrigir a ideia';feedback.append(h);const right=document.createElement('div');right.className='correct-answer';right.innerHTML='<strong>Correta: '+String.fromCharCode(65+item.order.indexOf(q.correct))+' · </strong>'+q.options[q.correct];feedback.append(right);
  if(!item.correct){const chosen=document.createElement('div');chosen.className='chosen-answer';chosen.innerHTML='<strong>Sua escolha: </strong>'+q.options[item.selected];feedback.append(chosen);}
- feedback.append(paragraph(q.explain));if(!item.correct||item.confidence==='unsure')feedback.append(paragraph(item.reinforcement?'Revise a regra, não a posição da alternativa.':'Este tema terá prioridade em outra pergunta. Faça uma nova tentativa depois de uma pausa.','feedback-next'));
+ feedback.append(paragraph(q.explain));if(q.sourceId&&publicSources.has(q.sourceId)){const src=publicSources.get(q.sourceId);const origin=document.createElement('div');origin.className='question-origin';origin.append(paragraph('Adaptação autoral de registro público; gabarito conferido para este exercício.'));const a=document.createElement('a');a.href=src.url;a.target='_blank';a.rel='noopener';a.textContent='Ver registro de origem';origin.append(a,paragraph('Conferência: '+q.validation));feedback.append(origin);}if(!item.correct||item.confidence==='unsure')feedback.append(paragraph(item.reinforcement?'Revise a regra, não a posição da alternativa.':'Este tema terá prioridade em outra pergunta. Faça uma nova tentativa depois de uma pausa.','feedback-next'));
  const reviewLink=document.createElement('a');reviewLink.href='#'+({N:'nosql',M:'metodos',L:'lps',A:'android',B:'backend'}[q.group]);reviewLink.textContent='Consultar resumo da matéria';feedback.append(reviewLink);card.append(feedback);}
  area.append(card);save();if(focus){card.scrollIntoView({block:'start'});title.focus({preventScroll:true});}
 }

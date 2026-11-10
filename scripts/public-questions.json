@@ -1,0 +1,272 @@
+[
+  {
+    "id": "N31",
+    "group": "N",
+    "subject": "NoSQL",
+    "topic": 1,
+    "html": "<p>A coluna dados contém {&quot;cores&quot;:[&quot;azul&quot;,&quot;verde&quot;,&quot;cinza&quot;]}. Qual é o resultado de dados -&gt; &#x27;cores&#x27; -&gt;&gt; 1?</p>",
+    "options": [
+      "verde, como texto",
+      "azul, como texto",
+      "verde, como objeto JSON",
+      "O array completo"
+    ],
+    "correct": 0,
+    "explain": "O índice começa em zero; 1 aponta para o segundo item e ->> extrai texto.",
+    "type": "choice",
+    "sourceId": "nosql-json",
+    "validation": "PostgreSQL, JSON Functions and Operators; apostila chave-valor, parte II."
+  },
+  {
+    "id": "N32",
+    "group": "N",
+    "subject": "NoSQL",
+    "topic": 4,
+    "html": "<p>Um catálogo será representado em grafo. Qual instrução adiciona uma entidade Produto com uma propriedade de identificação?</p>",
+    "options": [
+      "CREATE (:Produto {codigo:&#x27;P7&#x27;})",
+      "INSERT INTO (:Produto {codigo:&#x27;P7&#x27;})",
+      "ADD NODE Produto SET codigo=&#x27;P7&#x27;",
+      "MATCH (:Produto) RETURN &#x27;P7&#x27;"
+    ],
+    "correct": 0,
+    "explain": "Cypher usa CREATE com o padrão de nó entre parênteses; MATCH procura um padrão existente.",
+    "type": "choice",
+    "sourceId": "nosql-av",
+    "validation": "Apostilas de grafos, partes I e II."
+  },
+  {
+    "id": "N33",
+    "group": "N",
+    "subject": "NoSQL",
+    "topic": 3,
+    "html": "<p>Registros de vendas precisam ser colocados nas partições do Cassandra segundo a região. Que parte da chave é responsável por essa distribuição?</p>",
+    "options": [
+      "Partition key",
+      "Somente clustering column",
+      "Alias do SELECT",
+      "Nome de uma propriedade Cypher"
+    ],
+    "correct": 0,
+    "explain": "A partition key identifica a partição; clustering organiza linhas dentro dela.",
+    "type": "choice",
+    "sourceId": "nosql-av",
+    "validation": "Apostilas de Cassandra, partes I e II."
+  },
+  {
+    "id": "M31",
+    "group": "M",
+    "subject": "Métodos Quantitativos",
+    "topic": 0,
+    "html": "<p>Uma oficina decide as quantidades de dois produtos, limitadas pelos estoques de três metais. Quantas variáveis representam as decisões de produção?</p>",
+    "options": [
+      "Duas: uma por produto",
+      "Três: uma por metal",
+      "Cinco: produtos mais metais",
+      "Seis: produtos vezes metais"
+    ],
+    "correct": 0,
+    "explain": "Produtos definem as decisões; recursos geram as restrições.",
+    "type": "choice",
+    "sourceId": "metodos-av",
+    "validation": "Aplicações da programação linear: identificação de variáveis e recursos."
+  },
+  {
+    "id": "M32",
+    "group": "M",
+    "subject": "Métodos Quantitativos",
+    "topic": 0,
+    "html": "<p>Cada tonelada dos produtos X e Y consome, respectivamente, 0,4 e 0,15 tonelada de cobre. Há 12 toneladas de cobre. Qual limite está correto?</p>",
+    "options": [
+      "0,4x+0,15y≤12",
+      "0,4x+0,15y≥12",
+      "0,15x+0,4y≤12",
+      "x+y=12"
+    ],
+    "correct": 0,
+    "explain": "Consumo unitário vezes quantidade não pode ultrapassar o estoque disponível. Os dados são novos e explícitos.",
+    "type": "choice",
+    "sourceId": "metodos-av",
+    "validation": "Aplicações da programação linear: mistura e disponibilidade."
+  },
+  {
+    "id": "M33",
+    "group": "M",
+    "subject": "Métodos Quantitativos",
+    "topic": 0,
+    "html": "<p>Um gestor usa uma miniatura de armazém e uma equação de custos. Como classificar essas representações?</p>",
+    "options": [
+      "Modelo físico e matemático, respectivamente",
+      "Variável de decisão e estoque",
+      "Dois processos necessariamente aleatórios",
+      "Modelo matemático e físico, respectivamente"
+    ],
+    "correct": 0,
+    "explain": "A miniatura representa materialmente; a equação usa símbolos matemáticos.",
+    "type": "choice",
+    "sourceId": "metodos-av",
+    "validation": "PO como ferramenta de apoio à decisão: representações e modelos."
+  },
+  {
+    "id": "L31",
+    "group": "L",
+    "subject": "LPS",
+    "topic": 4,
+    "html": "<p>Uma família atende a uma clínica e a um hospital com exigências diferentes de disponibilidade. Como avaliar a qualidade?</p>",
+    "options": [
+      "Considerar os requisitos de cada produto",
+      "Exigir o mesmo limiar para todos",
+      "Testar só o produto menor",
+      "Medir apenas o número de módulos"
+    ],
+    "correct": 0,
+    "explain": "Uma base compartilhada não torna idênticos os requisitos de qualidade.",
+    "type": "choice",
+    "sourceId": "lps-teste",
+    "validation": "Conceitos de LPS e testes de aplicação."
+  },
+  {
+    "id": "L32",
+    "group": "L",
+    "subject": "LPS",
+    "topic": 0,
+    "html": "<p>Uma biblioteca comum foi ajustada para servir a mais produtos. Essa mudança é compatível com a engenharia dos ativos-base?</p>",
+    "options": [
+      "Sim, com evolução planejada e documentada",
+      "Não; ativos-base são imutáveis",
+      "Somente eliminando o reuso",
+      "Sim, dispensando documentação"
+    ],
+    "correct": 0,
+    "explain": "Ativos-base podem evoluir e receber adaptações para ampliar sua reutilização.",
+    "type": "choice",
+    "sourceId": "lps-teste",
+    "validation": "Conceitos de LPS: Core Asset Development, páginas 13–14."
+  },
+  {
+    "id": "L33",
+    "group": "L",
+    "subject": "LPS",
+    "topic": 1,
+    "html": "<p>Escolher as variantes de uma aplicação e identificar quando a escolha ocorre corresponde a:</p>",
+    "options": [
+      "Resolução de variabilidade e tempo de ligação",
+      "Normalização e tempo de resposta",
+      "Extração e compilação obrigatória",
+      "Teste de amostra e preço-sombra"
+    ],
+    "correct": 0,
+    "explain": "A resolução concretiza opções; o tempo de ligação identifica o momento da decisão.",
+    "type": "choice",
+    "sourceId": "lps-teste",
+    "validation": "Variabilidade em LPS: resolução e tempo de ligação."
+  },
+  {
+    "id": "A31",
+    "group": "A",
+    "subject": "Android",
+    "topic": 1,
+    "html": "<p>Uma preferência foi gravada sob a chave idioma no AsyncStorage. Qual operação recupera o valor dessa chave?</p>",
+    "options": [
+      "await AsyncStorage.getItem(&#x27;idioma&#x27;)",
+      "await AsyncStorage.getAllKeys(&#x27;idioma&#x27;)",
+      "await AsyncStorage.setItem(&#x27;idioma&#x27;)",
+      "await AsyncStorage.removeItem(&#x27;idioma&#x27;)"
+    ],
+    "correct": 0,
+    "explain": "getItem lê por chave. getAllKeys lista chaves; setItem grava e removeItem exclui.",
+    "type": "choice",
+    "sourceId": "android-av",
+    "validation": "Persistência com React Native, páginas 7–8."
+  },
+  {
+    "id": "A32",
+    "group": "A",
+    "subject": "Android",
+    "topic": 0,
+    "html": "<p>Uma FlatList precisa buscar mais resultados quando o usuário se aproxima do fim. Qual propriedade é destinada a sinalizar essa situação?</p>",
+    "options": [
+      "onEndReached",
+      "keyExtractor",
+      "initialNumToRender",
+      "ListHeaderComponent"
+    ],
+    "correct": 0,
+    "explain": "onEndReached permite disparar a busca; keyExtractor identifica itens e initialNumToRender configura a renderização inicial.",
+    "type": "choice",
+    "sourceId": "android-av",
+    "validation": "Interface gráfica com React Native, página 20."
+  },
+  {
+    "id": "A33",
+    "group": "A",
+    "subject": "Android",
+    "topic": 3,
+    "html": "<p>Num aplicativo MVC, uma classe consulta o banco e um componente JSX apresenta os resultados. A quais responsabilidades pertencem, respectivamente?</p>",
+    "options": [
+      "Model e View",
+      "View e Model",
+      "Controller e Model",
+      "View e Controller"
+    ],
+    "correct": 0,
+    "explain": "Acesso aos dados fica no modelo/DAO; apresentação é responsabilidade da View.",
+    "type": "choice",
+    "sourceId": "android-av",
+    "validation": "Tópicos avançados: MVC e DAO."
+  },
+  {
+    "id": "B31",
+    "group": "B",
+    "subject": "Back-end",
+    "topic": 1,
+    "html": "<p>Uma aplicação Java Web usa descritor de implantação para associar uma URL a um Servlet. Em qual arquivo ficam esses mapeamentos?</p>",
+    "options": [
+      "WEB-INF/web.xml",
+      "tomcat-users.xml",
+      "application.yml obrigatório",
+      "package.json"
+    ],
+    "correct": 0,
+    "explain": "web.xml é o descritor da aplicação e pode conter servlet-mapping; tomcat-users.xml trata usuários do Tomcat.",
+    "type": "choice",
+    "sourceId": "backend-av",
+    "validation": "Programação servidor com Java, página 9; exemplo oficial Apache Tomcat."
+  },
+  {
+    "id": "B32",
+    "group": "B",
+    "subject": "Back-end",
+    "topic": 2,
+    "html": "<p>O controller fornece uma coleção de pedidos a um template Thymeleaf. Qual atributo repete uma linha HTML para cada pedido?</p>",
+    "options": [
+      "th:each",
+      "th:text",
+      "th:if",
+      "th:fragment"
+    ],
+    "correct": 0,
+    "explain": "th:each itera; th:text altera texto, th:if condiciona e th:fragment declara um fragmento.",
+    "type": "choice",
+    "sourceId": "backend-av",
+    "validation": "Persistência com Spring Data, página 12; tutorial Thymeleaf, seção Iteration."
+  },
+  {
+    "id": "B33",
+    "group": "B",
+    "subject": "Back-end",
+    "topic": 1,
+    "html": "<p>Um sistema aplica Front Controller. Qual fluxo mantém as responsabilidades adequadas?</p>",
+    "options": [
+      "Servlet recebe e coordena; JSP apresenta os dados",
+      "JSP executa todas as regras e o Servlet apenas muda cores",
+      "O navegador executa os métodos de negócio Java do servidor",
+      "O banco escolhe diretamente qual arquivo JSP renderizar"
+    ],
+    "correct": 0,
+    "explain": "O controller coordena o atendimento e encaminha à camada de apresentação; as regras não passam a executar no navegador.",
+    "type": "choice",
+    "sourceId": "backend-sim",
+    "validation": "Programação servidor com Java: Servlet, JSP e encaminhamento."
+  }
+]

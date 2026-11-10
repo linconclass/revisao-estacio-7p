@@ -1,0 +1,72 @@
+[
+  {
+    "id": "nosql-av",
+    "subject": "NoSQL",
+    "title": "Registro público intitulado PROVA AV — Banco de Dados NoSQL",
+    "url": "https://www.passeidireto.com/arquivo/115160982/prova-av-banco-de-dados-nosql",
+    "kind": "AV atribuída à Estácio EAD; publicação de 2022",
+    "finding": "Há itens sobre PostgreSQL, chaves de Cassandra e criação de nós.",
+    "limit": "Prévia textual de upload de terceiro; sem autenticação institucional.",
+    "validation": "Apostilas locais de NoSQL; documentação PostgreSQL para operadores JSON."
+  },
+  {
+    "id": "nosql-json",
+    "subject": "NoSQL",
+    "title": "CCT0853 — Banco de Dados NoSQL — aula 4",
+    "url": "https://www.passeidireto.com/arquivo/107834666/cct-0853-banco-de-dados-nosql-aula-4",
+    "kind": "Teste de conhecimento; cabeçalho datado de 28/04/2022",
+    "finding": "Leitura de arrays e distinção entre -> e ->>.",
+    "limit": "Registro de exercício, não confirmação de prova atual.",
+    "validation": "PostgreSQL: funções JSON; apostila de chave-valor, parte II."
+  },
+  {
+    "id": "metodos-av",
+    "subject": "Métodos Quantitativos",
+    "title": "Registro público intitulado prova métodos quantitativos",
+    "url": "https://www.passeidireto.com/arquivo/127112363/prova-metodos-quantitativos",
+    "kind": "AV com código DGT0035 no cabeçalho; data interna 14/03/2023",
+    "finding": "Modelos, variáveis e formulação de misturas.",
+    "limit": "Algumas tabelas não aparecem na prévia; novos números foram criados para deixar a questão completa.",
+    "validation": "Apostilas locais de PO e aplicações de programação linear."
+  },
+  {
+    "id": "lps-teste",
+    "subject": "LPS",
+    "title": "CCT1027 — Linhas de Produtos de Software",
+    "url": "https://www.passeidireto.com/arquivo/118752483/cct-1027-linhas-de-produtos-de-software",
+    "kind": "Teste de conhecimento e simulado; cabeçalhos de 2023",
+    "finding": "Qualidade variável, ativos reutilizáveis e resolução de variabilidade.",
+    "limit": "É material de treino; não foi classificado como AV oficial autenticada.",
+    "validation": "Apostilas locais de conceitos e variabilidade em LPS."
+  },
+  {
+    "id": "android-av",
+    "subject": "Android / React Native",
+    "title": "AV — Programação para Dispositivos Móveis em Android — Estácio",
+    "url": "https://www.passeidireto.com/arquivo/110159010/av-programacao-para-dispositivos-moveis-em-android-estacio",
+    "kind": "Upload publicado em 2022, intitulado AV; prévia também o descreve como simulado",
+    "finding": "Leitura no AsyncStorage, listas e organização MVC.",
+    "limit": "Classificação AV/simulado ambígua; alternativas duplicadas e comandos antigos não foram incorporados como regras atuais.",
+    "validation": "Apostilas locais de persistência, interface e tópicos avançados."
+  },
+  {
+    "id": "backend-av",
+    "subject": "Back-end",
+    "title": "AV Desenvolvimento de Back-end",
+    "url": "https://www.passeidireto.com/arquivo/124108077/av-desenvolvimento-de-back-end",
+    "kind": "Upload de avaliação atribuído à Estácio EAD; publicação de 2023",
+    "finding": "Configuração de Servlet, templates e serviços.",
+    "limit": "No trecho SOAP/REST há uma generalização sobre transporte; não foi copiada como verdade.",
+    "validation": "Apostilas locais e documentação Apache Tomcat e Thymeleaf."
+  },
+  {
+    "id": "backend-sim",
+    "subject": "Back-end",
+    "title": "Gabarito simulado — Desenvolvimento de Back-end",
+    "url": "https://www.passeidireto.com/arquivo/122043951/gabarito-simulado-desenvolvimento-de-back-end",
+    "kind": "Simulado com cabeçalho e data de 14/05/2023",
+    "finding": "Responsabilidades de Servlet/JSP, Front Controller e cliente Retrofit.",
+    "limit": "Gabarito publicado por terceiro, sem confirmação da instituição.",
+    "validation": "Apostila local de programação servidor com Java."
+  }
+]
