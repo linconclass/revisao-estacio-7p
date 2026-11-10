@@ -1,0 +1,1100 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revisão intensiva Estácio | 10 e 11/11/2026</title><style>body{margin:0;background:#f2f5f8;color:#182b3b;font:17px/1.65 system-ui,sans-serif}header{background:#123b50;color:white;padding:32px max(20px,calc((100vw - 1000px)/2))}header p{max-width:850px}nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}nav a{background:#e5f3f3;color:#123b50;padding:8px 14px;border-radius:8px;text-decoration:none}main{max-width:1000px;margin:auto;padding:24px}article{background:white;padding:28px;border-radius:12px;margin-bottom:28px;box-shadow:0 2px 12px #123b5010}h1,h2,h3{line-height:1.3}h2{border-bottom:2px solid #b5d8dc;padding-bottom:10px;margin-top:40px;scroll-margin-top:16px}h3{color:#215d6a;margin-top:30px}table{border-collapse:collapse;display:block;overflow:auto;width:100%;font-size:15px;margin:20px 0}td,th{border:1px solid #d5e1e7;padding:9px;text-align:left}th{background:#eaf3f5}tr:nth-child(even){background:#f7fafb}pre{background:#102d3d;color:#e6f6ff;padding:18px;overflow:auto;border-radius:8px;font-size:14px}code{font-size:.9em}details{border:2px solid #a8cbd0;padding:18px;border-radius:10px}summary{cursor:pointer;font-weight:700;color:#215d6a}a{color:#11687a}button{padding:10px 18px;border:0;border-radius:8px;background:#fff;color:#123b50;cursor:pointer;font-weight:700}@media(max-width:650px){main{padding:10px}article{padding:18px}body{font-size:16px}header{padding:24px 18px}}@media print{body{background:white;font-size:11pt}header{padding:12px;color:black;background:white}nav,button{display:none}main{max-width:none;padding:0}article{box-shadow:none;padding:0}h2{break-after:avoid}tr,pre{break-inside:avoid}details{border:0}pre{white-space:pre-wrap;color:black;background:#f4f4f4}}</style><header><h1>Suas cinco provas, em ordem</h1><p>Revisão intensiva com resumos, Simplex resolvido e 50 questões autorais. Preparado com os 28 PDFs locais disponíveis.</p><nav><a href="#nosql">NoSQL · 10h</a><a href="#metodos">Métodos · 12h</a><a href="#lps">LPS · 17h</a><a href="#android">Android · 19h</a><a href="#backend">Back-end · quarta</a><a href="#treino">50 questões</a><a href="#respostas">Gabarito</a><a href="#fontes">Fontes e limites</a><button onclick="window.print()">Imprimir / salvar PDF</button></nav></header><main><article id="guia"><h1>Revisão intensiva — Estácio — 10 e 11/11/2026</h1>
+<p>Base: 28 apostilas locais, 1.048 páginas. Horários informados por você, sem consulta ao portal. Os resumos seguem os conteúdos disponíveis; as questões são autorais, sem promessa de antecipar a prova.</p>
+<h2>Ordem e plano de revisão</h2>
+<table>
+<thead>
+<tr>
+<th>Prova</th>
+<th>Data</th>
+<th>Hora</th>
+<th>Foco</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NoSQL</td>
+<td>10/11, terça</td>
+<td>10h</td>
+<td>Modelos, JSON/JSONB, MongoDB, Cassandra, Cypher</td>
+</tr>
+<tr>
+<td>Métodos Quantitativos</td>
+<td>10/11</td>
+<td>12h</td>
+<td>Modelagem, Simplex, dualidade, sensibilidade</td>
+</tr>
+<tr>
+<td>Linhas de Produtos de Software</td>
+<td>10/11</td>
+<td>17h</td>
+<td>Domínio × aplicação, variabilidade, testes</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>10/11</td>
+<td>19h</td>
+<td>React Native, persistência, rede, Redux</td>
+</tr>
+<tr>
+<td>Back-end</td>
+<td>11/11, quarta</td>
+<td>19h</td>
+<td>Java Web, Spring, mensageria e serviços</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estude ativamente:</strong> leia um bloco, feche o texto, explique em voz alta e resolva as questões. Volte ao conteúdo dos erros. Evite tentar ler integralmente todas as apostilas agora.</p>
+<p><strong>Se tiver 3 horas úteis hoje:</strong> 65 min NoSQL, 65 min Métodos, 30 min LPS, 20 min Android, com pausas curtas adicionais. Reserve tempo para dormir. Se o tempo for menor, preserve NoSQL e os exemplos de Métodos. Não dependa do intervalo entre 10h e 12h para aprender Métodos.</p>
+<p><strong>10/11:</strong> antes da primeira prova, repasse a folha rápida de NoSQL. Entre provas, revise conforme duração real e deslocamento permitirem. Depois de Métodos, concentre-se em LPS; depois, em Android.</p>
+<p><strong>11/11:</strong> três blocos de 50 min para Back-end: Java Web/JDBC; Spring Data; integração/mensageria. Depois faça as questões, corrija e repita as erradas.</p>
+<h2 id="nosql">1. NoSQL — 10/11, 10h</h2>
+<h3>Conceitos e quatro modelos</h3>
+<p>NoSQL significa <strong>Not Only SQL</strong>, uma família de modelos para diferentes necessidades de flexibilidade, escala e distribuição. Não significa que todos dispensem consistência ou sejam melhores que o relacional em qualquer situação.</p>
+<p><strong>Estruturados:</strong> esquema de campos, como cadastro tabular. <strong>Semiestruturados:</strong> organização flexível por chaves/tags, como JSON/XML. <strong>Não estruturados:</strong> conteúdo como áudio, vídeo e texto livre. <strong>Schemaless:</strong> registros não precisam compartilhar um esquema rígido previamente fixado; a aplicação ainda precisa validar e compreender os dados.</p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Organização</th>
+<th>Uso típico</th>
+<th>SGBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chave-valor</td>
+<td>Chave identifica valor</td>
+<td>Cache e sessões</td>
+<td>Redis; material também usa HSTORE no PostgreSQL</td>
+</tr>
+<tr>
+<td>Documentos</td>
+<td>Campos, objetos e listas</td>
+<td>Catálogos e cadastros variáveis</td>
+<td>MongoDB</td>
+</tr>
+<tr>
+<td>Famílias de colunas</td>
+<td>Partições e colunas para padrões de acesso</td>
+<td>Grandes cargas distribuídas</td>
+<td>Cassandra, HBase</td>
+</tr>
+<tr>
+<td>Grafos</td>
+<td>Nós, relações e propriedades</td>
+<td>Redes sociais e caminhos</td>
+<td>Neo4j</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Escala vertical:</strong> ampliar a máquina. <strong>Horizontal:</strong> distribuir por máquinas. <strong>Replicação:</strong> cópias. <strong>Particionamento:</strong> divisão dos dados. Não confunda esses dois mecanismos.</p>
+<h3>JSON, JSONB e HSTORE no PostgreSQL</h3>
+<p>HSTORE é extensão para pares chave-valor textuais. JSON guarda a representação textual validada. JSONB guarda representação binária processada, com indexação/operações próprias; não preserva necessariamente espaços, ordem das chaves ou chaves duplicadas.</p>
+<ul>
+<li><code>-&gt;</code> retorna elemento como JSON/JSONB; <code>-&gt;&gt;</code> retorna texto.</li>
+<li><code>json_each</code> desdobra objeto JSON em pares chave-valor.</li>
+<li><code>jsonb_pretty</code> formata para leitura; não filtra.</li>
+<li><code>@&gt;</code> testa contenção em JSONB.</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE pedidos (id serial PRIMARY KEY, detalhes jsonb);
+INSERT INTO pedidos (detalhes)
+VALUES ('{&quot;cliente&quot;:&quot;Ana&quot;,&quot;total&quot;:120}');
+SELECT detalhes -&gt; 'cliente' FROM pedidos;
+SELECT detalhes -&gt;&gt; 'cliente' FROM pedidos;
+SELECT * FROM pedidos WHERE detalhes -&gt;&gt; 'cliente' = 'Ana';
+SELECT * FROM pedidos WHERE detalhes @&gt; '{&quot;cliente&quot;:&quot;Ana&quot;}'::jsonb;
+</code></pre>
+<p>JSON estrito usa aspas duplas para nomes de propriedades e strings. Admite objetos, arrays, números, strings, booleanos e null. Usar JSONB não torna PostgreSQL exclusivamente NoSQL.</p>
+<h3>MongoDB</h3>
+<p>Tabela → coleção; linha → documento; coluna → campo. Documentos são armazenados em BSON, representação binária com tipos adicionais em relação ao JSON.</p>
+<p><strong>Agregado:</strong> conjunto relacionado tratado como unidade lógica, por exemplo pedido com seus itens. Embutir favorece a leitura conjunta; referenciar pode evitar duplicações e atender entidades com vida própria. A decisão depende de acesso e atualização.</p>
+<pre><code class="language-javascript">use escola
+db.createCollection('alunos')
+db.alunos.insertOne({nome:'Ana', nota:8, curso:'ADS'})
+db.alunos.find({nota: {$gte:7}})
+db.alunos.find({curso:'ADS'}, {nome:1, _id:0})
+db.alunos.updateOne({nome:'Ana'}, {$set:{nota:9}})
+db.alunos.deleteOne({nome:'Ana'})
+</code></pre>
+<p><code>$gt</code> maior; <code>$gte</code> maior/igual; <code>$lt</code> menor; <code>$lte</code> menor/igual; <code>$ne</code> diferente; <code>$in</code> pertence à lista. <code>$set</code> altera campos. <code>drop()</code> exclui coleção; <code>deleteOne()</code> exclui documento correspondente. Reconheça também formas antigas usadas nas apostilas, como insert/update/remove, observando quantos documentos afetam.</p>
+<p><strong>Capped collection:</strong> coleção com limite de tamanho e substituição dos documentos antigos ao atingir o limite.</p>
+<h3>Cassandra / CQL</h3>
+<p>Keyspace agrupa tabelas e configurações como replicação. <strong>Partition key</strong> determina a partição; <strong>clustering columns</strong> organizam linhas dentro dela. Modele segundo as consultas; duplicação pode ser deliberada. CQL lembra SQL, mas não oferece automaticamente a mesma liberdade de consultas e joins.</p>
+<pre><code class="language-sql">CREATE TABLE leituras (
+ sensor text, instante timestamp, valor double,
+ PRIMARY KEY (sensor, instante)
+);
+SELECT * FROM leituras WHERE sensor = 's1';
+</code></pre>
+<p><code>sensor</code> é partition key; <code>instante</code> é clustering. Em <code>PRIMARY KEY ((a,b),c)</code>, a partição usa a e b; c é clustering. <code>ALLOW FILTERING</code> permite determinadas filtragens, sem garantir eficiência. <code>list</code> é sequência e admite repetição; <code>set</code> tem valores únicos; <code>map</code> associa chaves a valores.</p>
+<h3>Neo4j / Cypher</h3>
+<p>Nó representa entidade/ocorrência; rótulo classifica nós; relacionamento liga nós, tem direção/tipo e pode ter propriedades. Nó não é uma tabela inteira.</p>
+<pre><code class="language-cypher">CREATE (:Pessoa {nome:'Ana'})
+CREATE (:Pessoa {nome:'Bia'})
+MATCH (a:Pessoa {nome:'Ana'}), (b:Pessoa {nome:'Bia'})
+CREATE (a)-[:SEGUE]-&gt;(b)
+MATCH (a:Pessoa)-[:SEGUE]-&gt;(b:Pessoa)
+RETURN a.nome, b.nome
+MATCH (p:Pessoa {nome:'Ana'}) SET p.idade = 23
+MATCH (p:Pessoa) RETURN count(p)
+</code></pre>
+<p><code>()</code> nó; <code>[]</code> relacionamento; <code>:Pessoa</code> rótulo; <code>{}</code> propriedades. MATCH localiza; WHERE filtra; RETURN projeta; SET altera; DELETE remove. DETACH DELETE remove o nó e seus relacionamentos. COUNT/SUM/AVG fazem agregações.</p>
+<p><strong>Complemento:</strong> ACID = atomicidade, consistência, isolamento e durabilidade. BASE = disponibilidade básica, estado flexível, consistência eventual. No CAP, durante uma partição de rede não se garantem simultaneamente consistência forte e disponibilidade para todas as operações. Evite decorar apenas “escolher dois de três”.</p>
+<p><strong>Revisão de 5 minutos:</strong> quatro modelos e usos; <code>-&gt;</code>/<code>-&gt;&gt;</code>; find/$set; partition key/clustering; MATCH/RETURN/SET.</p>
+<h2 id="metodos">2. Métodos Quantitativos — 10/11, 12h</h2>
+<h3>PO e modelagem</h3>
+<p>Pesquisa operacional apoia decisões com modelos quantitativos. Defina problema/dados, formule, resolva, valide e implemente/acompanhe. Modelo simplifica a realidade; o ótimo matemático precisa fazer sentido no contexto.</p>
+<p><strong>Programação linear (PL):</strong> função objetivo linear e restrições lineares. Pressupostos clássicos: proporcionalidade, aditividade, divisibilidade e certeza dos parâmetros. Se a quantidade precisar ser inteira, pode ser necessário um modelo inteiro; arredondar a solução contínua pode violar restrições.</p>
+<p>Roteiro: <strong>variáveis com unidades → objetivo → restrições → não negatividade/integralidade</strong>.</p>
+<ul>
+<li>“Até”, “no máximo”, “capacidade”: normalmente ≤.</li>
+<li>“Pelo menos”, “mínimo”: normalmente ≥.</li>
+<li>“Exatamente”, “balanço”: =.</li>
+</ul>
+<p>Exemplo: x mesas e y cadeiras; consumos de 3 e 2 horas; capacidade 120 horas: <code>3x+2y≤120</code>. Lucros unitários de 50 e 20: <code>max Z=50x+20y</code>. Não troque lucro por consumo de recurso.</p>
+<h3>Exercício resolvido — gráfico</h3>
+<pre><code>max Z = 3x + 2y
+x + y ≤ 4
+x ≤ 2
+y ≤ 3
+x,y ≥ 0
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Vértice viável</th>
+<th style="text-align: right;">Z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(0,0)</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>(2,0)</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>(2,2)</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>(1,3)</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>(0,3)</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ótimo: x=2, y=2, Z=10.</strong> Folgas: primeira restrição 0; segunda 0; terceira <code>3−2=1</code>.</p>
+<p>Havendo ótimo finito e vértices viáveis, há ótimo em um vértice. Pode haver múltiplos ótimos, inviabilidade ou objetivo ilimitado. Região ilimitada não implica automaticamente objetivo ilimitado.</p>
+<h3>Simplex — exemplo com duas iterações</h3>
+<p>O Simplex percorre soluções básicas viáveis para melhorar o objetivo.</p>
+<ul>
+<li>Restrição ≤ recebe folga <code>+s</code>.</li>
+<li>Restrição ≥ recebe excesso <code>−s</code>; pode exigir artificial para iniciar a base.</li>
+<li>Igualdade também pode exigir artificial. Duas fases/Big M ajudam a obter base viável.</li>
+</ul>
+<p><strong>Convenção aqui:</strong> linha <code>Z−3x−2y=0</code>. Coeficiente negativo na linha Z indica melhoria possível na maximização. Tabelas com Cj−Zj usam outro sinal: confira a convenção antes de escolher.</p>
+<p>Tabela inicial:</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">s1</th>
+<th style="text-align: right;">s2</th>
+<th style="text-align: right;">s3</th>
+<th style="text-align: right;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>s2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>s3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Z</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Entra x. Teste de razão apenas com coeficientes da coluna estritamente positivos: <code>4/1=4</code>, <code>2/1=2</code>. A terceira linha não participa. Sai s2; pivô 1.</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">s1</th>
+<th style="text-align: right;">s2</th>
+<th style="text-align: right;">s3</th>
+<th style="text-align: right;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>x</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>s3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Z</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<p>Entra y. Razões <code>2/1=2</code> e <code>3/1=3</code>. Sai s1.</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">s1</th>
+<th style="text-align: right;">s2</th>
+<th style="text-align: right;">s3</th>
+<th style="text-align: right;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>x</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>s3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Z</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<p>Não restam coeficientes negativos na linha Z: ótimo. Variáveis não básicas s1=s2=0; básicas y=2, x=2, s3=1; Z=10.</p>
+<p><strong>Pivotamento:</strong> dividir a linha do pivô pelo pivô; nas demais, <code>nova linha = antiga − coeficiente da coluna × nova linha do pivô</code>.</p>
+<h3>Dualidade e interpretação econômica</h3>
+<pre><code>Primal padrão: max cᵀx, Ax≤b, x≥0
+Dual:          min bᵀu, Aᵀu≥c, u≥0
+</code></pre>
+<p>Cada restrição primal gera uma variável dual; cada variável primal gera uma restrição dual. Transponha a matriz e troque os papéis dos coeficientes do objetivo e dos termos independentes.</p>
+<p>Dual do exemplo:</p>
+<pre><code>min W = 4u1 + 2u2 + 3u3
+u1 + u2 ≥ 3
+u1 + u3 ≥ 2
+u1,u2,u3 ≥ 0
+</code></pre>
+<p><code>u1=2,u2=1,u3=0</code> é viável e dá W=10=Z, certificando a otimalidade.</p>
+<p><strong>Dualidade fraca:</strong> qualquer valor primal viável de maximização não supera qualquer valor dual viável de minimização. <strong>Forte:</strong> havendo ótimos finitos, os valores são iguais.</p>
+<p><strong>Complementaridade:</strong> <code>ui × folga_i=0</code>. Folga estritamente positiva implica preço-sombra zero. <strong>Folga zero não obriga preço positivo</strong>; também pode ser zero. A apostila simplifica isso; preserve a distinção.</p>
+<p>Para primal de maximização: restrição ≥ gera variável dual ≤0; igualdade gera variável dual livre. Variável primal livre gera igualdade no dual.</p>
+<p><strong>Dual-Simplex:</strong> tipicamente mantém viabilidade dual enquanto corrige inviabilidade primal; não é só trocar max por min sem alterar o procedimento.</p>
+<h3>Sensibilidade</h3>
+<p>Preço-sombra é a variação marginal do ótimo para alteração no lado direito da restrição, dentro do intervalo e das condições de validade.</p>
+<p>No exemplo, elevar a capacidade <code>x+y≤4</code> para 4,5 permite <code>(2;2,5)</code>, Z=11. Ganho <code>0,5×2=1</code>. Mantendo os outros limites, o preço 2 vale no intervalo de capacidade de <strong>2 a 5</strong>; depois disso, y já atingiu seu limite 3.</p>
+<ul>
+<li>Alterar coeficiente do objetivo pode manter o mesmo ponto ótimo e mudar Z.</li>
+<li>Alterar disponibilidade pode mudar as quantidades ótimas, mesmo mantendo a base.</li>
+<li>Custo reduzido ajuda a interpretar quanto o coeficiente de uma variável não básica deve melhorar para que sua entrada possa ser atrativa. Sinal depende da convenção/max/min.</li>
+<li>Regra dos 100%: quando aplicável, somar as frações das alterações sobre seus limites permitidos fornece uma condição suficiente de estabilidade se a soma ≤1. Se &gt;1, perde-se a garantia; isso não prova que o ótimo mudou.</li>
+</ul>
+<h3>Modelos clássicos</h3>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Ideia de modelagem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fazer/comprar</td>
+<td>Quantidades produzidas e compradas; custo mínimo; demanda/capacidade</td>
+</tr>
+<tr>
+<td>Mistura</td>
+<td>Custo dos ingredientes e composição: nutriente total ≥ percentual × total</td>
+</tr>
+<tr>
+<td>Produção/estoque</td>
+<td>Estoque anterior + produção − demanda = estoque final</td>
+</tr>
+<tr>
+<td>Transporte</td>
+<td>xij enviado da origem i ao destino j; minimizar Σcij xij; oferta/demanda</td>
+</tr>
+<tr>
+<td>Transbordo</td>
+<td>Nó intermediário sem geração/consumo: entrada = saída</td>
+</tr>
+<tr>
+<td>Alocação</td>
+<td>xij binário; na atribuição um a um, somas por agente/tarefa = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Balanceamento de transporte pode usar origem/destino fictício, com custos que representem o contexto. Não coloque custo zero automaticamente se houver penalidade real de falta ou sobra.</p>
+<p><strong>Revisão de 5 minutos:</strong> sinais das restrições; vértices; razão positiva; matriz transposta; preço-sombra com intervalo; folga positiva → preço zero.</p>
+<h2 id="lps">3. Linhas de Produtos de Software — 10/11, 17h</h2>
+<h3>Ideia central e duas engenharias</h3>
+<p>LPS é uma família de sistemas de um domínio produzida a partir de ativos comuns, com variabilidade planejada. Reuso inclui requisitos, arquitetura, componentes, processos, documentação e testes.</p>
+<p>Exemplo: sistemas para clínicas. Cadastro e agenda são comuns; faturamento, teleconsulta e autenticação variam. Cada configuração atende a uma clínica.</p>
+<p><strong>Domínio:</strong> área de negócio/problema. <strong>Ativos-base/plataforma:</strong> artefatos reutilizáveis. <strong>Comunalidade:</strong> o compartilhado. <strong>Variabilidade:</strong> diferenças permitidas e geridas. <strong>Customização em massa:</strong> combinar reuso com necessidades distintas.</p>
+<table>
+<thead>
+<tr>
+<th>Engenharia do domínio</th>
+<th>Engenharia da aplicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desenvolve PARA reuso</td>
+<td>Desenvolve COM reuso</td>
+</tr>
+<tr>
+<td>Define comuns e variáveis da família</td>
+<td>Seleciona variantes do produto concreto</td>
+</tr>
+<tr>
+<td>Cria requisitos, arquitetura de referência, componentes e testes reutilizáveis</td>
+<td>Deriva requisitos, arquitetura, implementação e testes da aplicação</td>
+</tr>
+</tbody>
+</table>
+<p>Gestão de produtos orienta escopo e roteiro da linha. Requisitos, projeto, realização e testes interagem e admitem retorno. A arquitetura da aplicação especializa a arquitetura de referência. O framework LPS articula as duas engenharias e a gestão da variabilidade.</p>
+<h3>Variabilidade: vocabulário que precisa dominar</h3>
+<ul>
+<li>Sujeito de variabilidade: o que varia no mundo real, como forma de autenticação.</li>
+<li>Objeto de variabilidade: opção concreta, como senha/biometria.</li>
+<li>Ponto de variação (PV): representação de onde existe uma decisão nos artefatos.</li>
+<li>Variante (V): opção de um ponto de variação.</li>
+<li>Obrigatória: presente nas condições especificadas; opcional: pode ou não ser selecionada.</li>
+<li>Grupo alternativo/cardinalidade: observe quantas opções são permitidas, <code>[mínimo,máximo]</code>; não presuma sempre uma só.</li>
+<li>Requires: A exige B. Excludes: A impede coexistência com B.</li>
+<li>Tempo de ligação: quando a escolha é resolvida — requisitos, projeto, compilação/configuração ou execução.</li>
+<li>Variabilidade externa: percebida pelo cliente. Interna: decisão técnica, como biblioteca usada.</li>
+</ul>
+<p><strong>Modelo Ortogonal de Variabilidade (MOV):</strong> documenta pontos, variantes, dependências e restrições, ligados transversalmente aos artefatos. Ortogonal não significa desconectado de requisitos/código.</p>
+<p><strong>Rastreabilidade:</strong> variante → requisito → arquitetura/componente → teste. Se teleconsulta exige vídeo, essa escolha precisa aparecer em todas as partes pertinentes.</p>
+<h3>Adoção, deltas e custos</h3>
+<p><strong>Proativa:</strong> prepara ativos-base antes dos produtos previstos. <strong>Reativa:</strong> evolui a base incrementalmente conforme surgem necessidades. <strong>Extrativa:</strong> analisa produtos existentes e extrai comuns/variáveis.</p>
+<p><strong>Requisito delta:</strong> necessidade da aplicação não completamente atendida pelo domínio disponível. Avalie custo, impacto arquitetural, interfaces, testes e eventual incorporação à família.</p>
+<p>Benefícios: produtividade, qualidade, consistência e menor tempo de entrega. Dificuldades: investimento inicial, escopo inadequado, versões/configurações e explosão combinatória. Reusar não dispensa adaptar ou validar.</p>
+<h3>Testes</h3>
+<p>Domínio valida ativos reutilizáveis e prepara testes; aplicação valida a configuração concreta, integração e deltas.</p>
+<ul>
+<li>Força bruta: todas as configurações; pode se tornar inviável.</li>
+<li>Aplicação pura: testes concentrados em cada aplicação, sem validação antecipada de domínio e com repetição de esforço.</li>
+<li>Aplicativos de amostra: configurações representativas antecipam validação; ainda se testam aplicações reais.</li>
+</ul>
+<p>Dez pontos independentes, uma escolha entre 3 variantes em cada um: <code>3^10=59.049</code>. O total muda com cardinalidades/restrições. A apostila imprime 359.049 em um exemplo semelhante; não memorize esse número como 3^10.</p>
+<p><strong>Revisão de 5 minutos:</strong> domínio cria ativos; aplicação deriva produto; PV decisão/V opção; requires/excludes; rastreabilidade; deltas; testes complementares.</p>
+<h2 id="android">4. Android / React Native — 10/11, 19h</h2>
+<h3>Foco do material e componentes</h3>
+<p>Os cinco PDFs disponíveis são de <strong>React Native</strong>. Priorize esse conteúdo. React Native usa JavaScript/TypeScript e componentes para interfaces nativas; JSX descreve interface, sem ser HTML de uma página convencional.</p>
+<p>Ferramentas citadas: Node/NPM ou Yarn, ambiente Android, Metro e Expo/CLI. Entenda suas funções; não gaste a revisão decorando versões/comandos de instalação.</p>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Papel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View</td>
+<td>Contêiner e layout</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Texto</td>
+</tr>
+<tr>
+<td>TextInput</td>
+<td>Entrada de texto</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>Imagem</td>
+</tr>
+<tr>
+<td>Button / componentes de toque</td>
+<td>Ações</td>
+</tr>
+<tr>
+<td>ScrollView</td>
+<td>Conteúdo rolável com seus filhos renderizados</td>
+</tr>
+<tr>
+<td>FlatList</td>
+<td>Lista com virtualização</td>
+</tr>
+<tr>
+<td>SectionList</td>
+<td>Lista por seções</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Props:</strong> dados recebidos do pai. <strong>State:</strong> dados controlados pelo componente; atualizar pode disparar renderização. Não modifique diretamente o estado esperando o comportamento correto.</p>
+<pre><code class="language-jsx">const [nome, setNome] = useState('');
+const [contador, setContador] = useState(0);
+&lt;TextInput value={nome} onChangeText={setNome} /&gt;
+&lt;Button title=&quot;Somar&quot; onPress={() =&gt; setContador(c =&gt; c + 1)} /&gt;
+</code></pre>
+<p><code>onPress={salvar}</code> passa função; <code>onPress={salvar()}</code> executa durante a renderização e passa o retorno. <code>useEffect</code> coordena efeitos, como carregar dados; dependências controlam quando roda. <code>[]</code> representa execução na montagem, com particularidades dos modos de desenvolvimento. Evite requisição involuntária a cada renderização.</p>
+<h3>Interface e navegação</h3>
+<p>FlatList: <code>data</code>, <code>renderItem</code>, chave estável via <code>keyExtractor</code>. Índice pode ser uma chave ruim quando itens mudam de posição.</p>
+<p><strong>Stack:</strong> pilha de telas/voltar. <strong>Tabs:</strong> abas. <strong>Drawer:</strong> menu lateral.</p>
+<p>StyleSheet organiza estilos em objetos JavaScript; propriedades em camelCase, como backgroundColor. Flexbox distribui elementos; direção padrão no React Native é coluna. justifyContent atua no eixo principal; alignItems no transversal. Os eixos mudam com flexDirection. Animated permite animar valores/propriedades.</p>
+<h3>Persistência</h3>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Uso/modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AsyncStorage</td>
+<td>Chave-valor local assíncrono; valores textuais</td>
+</tr>
+<tr>
+<td>SQLite</td>
+<td>Banco relacional local, SQL e transações</td>
+</tr>
+<tr>
+<td>Realm</td>
+<td>Objetos persistentes com esquema</td>
+</tr>
+<tr>
+<td>MongoDB via serviço/API</td>
+<td>Persistência remota intermediada pelo servidor</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-javascript">await AsyncStorage.setItem('perfil', JSON.stringify({nome:'Ana'}));
+const texto = await AsyncStorage.getItem('perfil');
+const perfil = texto === null ? null : JSON.parse(texto);
+</code></pre>
+<p>Serializar transforma objeto em representação armazenável/transmissível; desserializar reconstrói. Estado em memória não é persistência.</p>
+<p>No SQLite dos exemplos: openDatabase abre, transaction inicia transação, executeSql executa comando. Parâmetros separam dados de SQL. Operações assíncronas exigem aguardar ou usar callback; não leia o resultado antes da conclusão.</p>
+<h3>Rede e Offline First</h3>
+<pre><code class="language-javascript">async function carregar(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('Falha HTTP');
+  return await r.json();
+}
+</code></pre>
+<p>Fetch entrega Response e depois se extrai JSON; Axios normalmente expõe o corpo convertido em <code>resposta.data</code>. Erro de rede e resposta HTTP de erro diferem: um 404 não faz necessariamente Fetch rejeitar a Promise.</p>
+<p>Envio JSON com Fetch: método, <code>Content-Type: application/json</code>, <code>body: JSON.stringify(objeto)</code>. Token pode ir em <code>Authorization: Bearer ...</code>.</p>
+<p><strong>Offline First:</strong> operação local e sincronização posterior. Exige fila de operações, reconexão, duplicação e conflitos. Detectar internet não sincroniza tudo. Exemplo: dois usuários alteram o mesmo cadastro offline; é preciso reconciliar ou decidir prevalência.</p>
+<h3>Arquiteturas, segurança, testes e publicação</h3>
+<ul>
+<li>MVC: Model dados/regras; View apresentação; Controller coordenação. DAO encapsula acesso a dados.</li>
+<li>Flux: fluxo unidirecional com actions, dispatcher, stores e views.</li>
+<li>Redux: store central e reducers. Action descreve evento; reducer calcula novo estado a partir do anterior/action, sem alterar diretamente o estado recebido.</li>
+<li>Base64: codificação reversível, sem chave secreta; não fornece sigilo.</li>
+<li>Criptografia simétrica: mesma chave secreta para cifrar/decifrar; exemplo AES.</li>
+<li>Assimétrica: par pública/privada, com operações apropriadas para sigilo/assinatura.</li>
+<li>Hash: resumo de sentido único; não há etapa normal de “descriptografar hash”. O material cita MD5/SHA1 como exemplos; isso não é recomendação de proteção de senhas.</li>
+<li>Jest: test/expect/verificações; mocks substituem dependências em testes controlados.</li>
+<li>Performance: renderizações, listas, memória e trabalho desnecessário.</li>
+<li>Publicação: build de distribuição, assinatura, identificação/versão, testes e envio à loja. O guia trata o fluxo didático, sem verificar ferramentas atuais.</li>
+</ul>
+<p><strong>Revisão de 5 minutos:</strong> props/state; FlatList; navegação; stringify/parse; local/remoto; Response.json/Axios.data; action/reducer/store; Base64 não é criptografia.</p>
+<h2 id="backend">5. Desenvolvimento de Back-end — 11/11, 19h</h2>
+<h3>Formatos e HTTP</h3>
+<p>XML usa tags/atributos/hierarquia. Documento bem formado tem raiz única, fechamento e aninhamento corretos; validação por DTD/XSD é adicional. JSON usa objetos/arrays/valores; texto JSON e objeto em memória diferem. YAML é serialização legível, com hierarquia frequentemente indicada por indentação.</p>
+<p>AJAX permite comunicação assíncrona e atualização de partes da interface; pode usar JSON/texto, além de XML.</p>
+<p>HTTP trabalha com requisição/resposta e não mantém, por si só, sessão entre elas. Cookies/sessões acrescentam continuidade.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Intenção habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Consultar sem solicitar alteração do estado</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Submeter/criar/processar; sem garantia geral de idempotência</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Criar/substituir estado no recurso identificado; idempotente</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Alteração parcial; idempotência depende da operação</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Remoção; idempotente na semântica HTTP</td>
+</tr>
+</tbody>
+</table>
+<p>Idempotente: repetir tem o mesmo efeito pretendido que executar uma vez; não exige respostas idênticas.</p>
+<p>200 sucesso; 201 criado; 204 sucesso sem corpo; 400 requisição inválida; 401 falta de autenticação válida; 403 acesso negado; 404 ausente; 500 erro interno. Usar corpo em POST não torna dados secretos; proteção de transporte depende de HTTPS.</p>
+<h3>Ambiente Java, Servlet, JSP e JDBC</h3>
+<p><strong>Tomcat:</strong> contêiner Servlet/JSP. <strong>GlassFish:</strong> servidor de aplicações com serviços corporativos mais amplos. Tomcat isolado não implementa automaticamente todos os serviços Java EE/Jakarta EE.</p>
+<p>Servlet recebe requisições/gera respostas. Reconheça doGet/doPost e ciclo init → service → destroy. Não se cria necessariamente instância nova por usuário. Request contém dados recebidos; Response define status/cabeçalhos/corpo.</p>
+<p>JSP é apresentação processada no servidor e traduzida para Servlet. Não confunda execução no servidor com JavaScript do navegador. Sessão mantém dados entre requisições; cookie pode carregar seu identificador. Forward encaminha internamente; redirect orienta o cliente a fazer nova requisição.</p>
+<p>JDBC: API Java para acesso por drivers. Fluxo Connection → PreparedStatement → execução → ResultSet quando houver consulta → fechamento.</p>
+<pre><code class="language-java">String sql = &quot;SELECT nome FROM aluno WHERE id = ?&quot;;
+try (PreparedStatement ps = con.prepareStatement(sql)) {
+  ps.setInt(1, id);
+  try (ResultSet rs = ps.executeQuery()) {
+    while (rs.next()) System.out.println(rs.getString(&quot;nome&quot;));
+  }
+}
+</code></pre>
+<p>executeQuery retorna resultado de consulta; executeUpdate atende INSERT/UPDATE/DELETE e informa linhas afetadas. Parâmetro <code>?</code> evita montar SQL concatenando conteúdo do usuário.</p>
+<h3>Spring e persistência</h3>
+<p>IoC: contêiner gerencia objetos/ciclo de vida. Injeção de dependências entrega dependências ao objeto, reduzindo acoplamento. Spring Boot simplifica configuração/inicialização. Spring Data abstrai repositórios e acesso.</p>
+<p>JPA é especificação objeto-relacional; Hibernate é implementação; Spring Data JPA oferece repositórios apoiados nessa infraestrutura.</p>
+<p>Fluxo: <strong>requisição → controller → service → repository → banco</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@RestController</td>
+<td>Retorno escrito no corpo da resposta</td>
+</tr>
+<tr>
+<td>@GetMapping / @PostMapping etc.</td>
+<td>Método HTTP e rota</td>
+</tr>
+<tr>
+<td>@PathVariable</td>
+<td>Parte variável da URL</td>
+</tr>
+<tr>
+<td>@RequestParam</td>
+<td>Parâmetro da requisição</td>
+</tr>
+<tr>
+<td>@RequestBody</td>
+<td>Converter corpo em objeto</td>
+</tr>
+<tr>
+<td>@Service</td>
+<td>Componente de lógica de serviço</td>
+</tr>
+<tr>
+<td>@Entity / @Id</td>
+<td>Entidade JPA e identificador</td>
+</tr>
+<tr>
+<td>JpaRepository<Aluno, Long></td>
+<td>Entidade e tipo do ID no repositório JPA</td>
+</tr>
+<tr>
+<td>@Document / MongoRepository</td>
+<td>Mapeamento/repositório MongoDB</td>
+</tr>
+</tbody>
+</table>
+<p>Operações usuais: findAll, findById, save, deleteById. Consultas derivadas usam convenções, como findByNome. save não significa apenas INSERT em toda situação.</p>
+<p>Postman testa APIs como cliente. Retrofit consome HTTP em Java com interfaces/conversores. Controller fornece endpoint; cliente consome.</p>
+<h3>Mensageria, JMS e RabbitMQ</h3>
+<p>Comunicação por mensagens desacopla produtor/consumidor e pode absorver picos. Exige tratar falhas, reentregas, ordem e consistência entre processos.</p>
+<ul>
+<li>Produtor publica; consumidor processa; broker intermedeia.</li>
+<li>Fila/ponto a ponto: consumidores podem competir; cada entrega vai a um consumidor. Falha pode causar reentrega.</li>
+<li>Publish/subscribe: diferentes assinantes podem receber publicação conforme configuração.</li>
+<li>JMS é API/especificação Java, não broker específico.</li>
+<li>Componentes JMS: ConnectionFactory, Connection, Session, Destination (Queue/Topic), MessageProducer/Consumer.</li>
+<li>RabbitMQ é broker. Fluxo do material: produtor → exchange → fila(s) → consumidor(es).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Exchange</th>
+<th>Regra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct</td>
+<td>Combinação de routing key com binding correspondente</td>
+</tr>
+<tr>
+<td>Fanout</td>
+<td>Todas as filas vinculadas</td>
+</tr>
+<tr>
+<td>Topic</td>
+<td>Padrões de routing keys</td>
+</tr>
+<tr>
+<td>Headers</td>
+<td>Atributos dos cabeçalhos</td>
+</tr>
+</tbody>
+</table>
+<p>Ack confirma conforme o modo utilizado. Durabilidade da fila, persistência da mensagem e ack resolvem partes diferentes da confiabilidade. Fila não garante sozinha processamento exatamente uma vez. Consumidor idempotente ajuda em reentregas.</p>
+<h3>SOAP, REST e GraphQL</h3>
+<p>SOA organiza capacidades como serviços. API é interface/contrato. Web Service integra sistemas em rede, mesmo com linguagens/plataformas distintas.</p>
+<table>
+<thead>
+<tr>
+<th>SOAP</th>
+<th>REST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protocolo</td>
+<td>Estilo arquitetural</td>
+</tr>
+<tr>
+<td>Mensagens XML</td>
+<td>Diferentes representações, incluindo JSON/XML</td>
+</tr>
+<tr>
+<td>Envelope, Header opcional, Body, Fault</td>
+<td>Recursos/URIs, interface uniforme e interações stateless</td>
+</tr>
+<tr>
+<td>WSDL descreve contrato; UDDI aparece como registro/descoberta</td>
+<td>Métodos HTTP na aplicação sobre HTTP</td>
+</tr>
+</tbody>
+</table>
+<p>Java do material: JAX-WS com SOAP; JAX-RS com REST. Reconheça @WebService/@WebMethod e @Path/@GET/@POST/@Produces/@Consumes. Pacotes/disponibilidade dependem da versão; foco é interpretação da apostila.</p>
+<p>Stateless não significa sem banco ou sem autenticação: cada requisição fornece contexto suficiente, sem depender de conversa implícita de sessão.</p>
+<p>GraphQL permite selecionar campos desejados. Schema define tipos/operações; resolver obtém valor de campo; query consulta; mutation altera. Não é banco nem broker. Query/mutation não equivalem obrigatoriamente a métodos HTTP específicos.</p>
+<p><strong>Revisão de 5 minutos:</strong> Servlet/JSP; JDBC/JPA/Spring Data; IoC/DI; SOAP/REST; JMS/RabbitMQ; exchange/fila; query/mutation/resolver.</p>
+<h2>Observações sobre cobertura</h2>
+<p>Foram extraídos os textos dos 28 PDFs. Figuras/equações e trechos só disponíveis em vídeo podem não aparecer integralmente na extração. O guia é uma síntese intensiva.</p>
+<p>Os arquivos de NoSQL chamados Aula 2 a Aula 11 correspondem internamente às aulas 1 a 10. No arquivo Aula 11, página 2, há trecho sobre Unreal Engine alheio ao tema, desconsiderado.</p>
+<p>Não foram encontrados arquivos de Tema 1 nas quatro disciplinas organizadas por temas. Isso não comprova ausência desses conteúdos na avaliação.</p>
+<p>Os exemplos numéricos e o simulado são autorais. O guia não verifica versões atuais de instalação ou procedimentos das lojas. A relação dos 28 arquivos está em fontes-e-cobertura.md.</p></article><article id="treino"><h1>Simulado intensivo — 50 questões</h1>
+<p>Questões autorais baseadas nos assuntos das apostilas disponíveis. Não são questões oficiais nem previsão de cobrança. Resolva antes de abrir o gabarito. Nas discursivas, use uma ou duas frases. Ao corrigir, marque o tema do erro, revise e repita a questão sem olhar.</p>
+<h2>1. NoSQL — 10/11, 10h</h2>
+<p><strong>N1.</strong> Qual associação está correta? A) MongoDB–grafos; B) Neo4j–grafos; C) Cassandra–documentos; D) Redis–relacional exclusivo.</p>
+<p><strong>N2.</strong> Para obter cliente como texto no PostgreSQL: A) <code>detalhes -&gt; 'cliente'</code>; B) <code>detalhes -&gt;&gt; 'cliente'</code>; C) <code>jsonb_pretty(detalhes)</code>; D) <code>count(cliente)</code>.</p>
+<p><strong>N3.</strong> Schemaless quer dizer: A) dados sem significado; B) nenhum registro pode ter estrutura; C) não se exige esquema rígido uniforme previamente fixado; D) validação é proibida.</p>
+<p><strong>N4.</strong> O que faz <code>db.alunos.find({nota: {$gte: 7}})</code>?</p>
+<p><strong>N5.</strong> Em <code>PRIMARY KEY ((loja,mes),dia)</code>, quais campos definem a partição e qual é clustering?</p>
+<p><strong>N6.</strong> Para representar seguidores e percorrer relacionamentos, qual modelo é o encaixe mais direto?</p>
+<p><strong>N7.</strong> O que retorna <code>MATCH (a:Pessoa)-[:SEGUE]-&gt;(b:Pessoa) RETURN b.nome</code>? Pode haver repetição?</p>
+<p><strong>N8.</strong> Embutir itens no documento de um pedido significa: A) criar grafo; B) reunir agregado; C) eliminar toda duplicação; D) impor esquema uniforme a todas as coleções.</p>
+<p><strong>N9.</strong> Diferencie replicação e particionamento.</p>
+<p><strong>N10.</strong> Verdadeiro ou falso: ALLOW FILTERING garante consulta eficiente.</p>
+<h2>2. Métodos Quantitativos — 10/11, 12h</h2>
+<p><strong>M1.</strong> A consome 2 horas por unidade e B consome 3; há no máximo 60 horas. Escreva a restrição para quantidades x e y.</p>
+<p><strong>M2.</strong> É preciso obter pelo menos 25 unidades entre produção própria x e compra y. Escreva a restrição.</p>
+<p><strong>M3.</strong> Resolva por vértices: <code>max 4x+3y</code>, com <code>x+y≤5</code>, <code>x≤3</code>, <code>y≤4</code>, <code>x,y≥0</code>.</p>
+<p><strong>M4.</strong> No teste de razão do Simplex primal, coeficientes positivos da coluna entrante são 2 e 1; termos independentes, 8 e 3. Qual linha sai?</p>
+<p><strong>M5.</strong> Escreva o dual: <code>max 5x+4y</code>, com <code>2x+y≤10</code>, <code>x+3y≤12</code>, <code>x,y≥0</code>.</p>
+<p><strong>M6.</strong> Preço-sombra 6; capacidade aumenta 2 unidades dentro do intervalo de validade. Quanto varia o ótimo?</p>
+<p><strong>M7.</strong> Verdadeiro ou falso: toda restrição com folga zero tem preço-sombra estritamente positivo.</p>
+<p><strong>M8.</strong> Estoque inicial 10, produção 40, demanda 35. Estoque final?</p>
+<p><strong>M9.</strong> Mistura com pelo menos 30% de nutriente; x contém 20% e y contém 50%. Escreva a restrição.</p>
+<p><strong>M10.</strong> Para <code>max 3x+2y</code>, <code>x+y≤4</code>, <code>x≤2</code>, <code>y≤3</code>, o ótimo é (2,2), Z=10 e o preço-sombra da primeira restrição é 2. Se a capacidade passa a 6, é correto prever ganho de 4? Calcule o novo ótimo.</p>
+<h2>3. LPS — 10/11, 17h</h2>
+<p><strong>L1.</strong> Qual engenharia cria os ativos reutilizáveis?</p>
+<p><strong>L2.</strong> Qual engenharia seleciona as variantes de um produto para uma clínica específica?</p>
+<p><strong>L3.</strong> No ponto de variação “autenticação”, senha e biometria são o quê?</p>
+<p><strong>L4.</strong> A requires B: A presente/B ausente é configuração válida?</p>
+<p><strong>L5.</strong> Extrair comunalidades de produtos existentes é adoção: A) proativa; B) extrativa; C) força bruta; D) aplicação pura.</p>
+<p><strong>L6.</strong> Para que serve o Modelo Ortogonal de Variabilidade?</p>
+<p><strong>L7.</strong> O que é requisito delta?</p>
+<p><strong>L8.</strong> Verdadeiro ou falso: testes dos ativos de domínio dispensam testes de aplicação.</p>
+<p><strong>L9.</strong> Quatro pontos independentes, exatamente uma escolha entre duas variantes em cada: quantas configurações sem outras restrições?</p>
+<p><strong>L10.</strong> Mudança em variante altera requisito/código, mas o teste ficou desatualizado. Qual prática ajuda a identificar esse impacto?</p>
+<h2>4. Android / React Native — 10/11, 19h</h2>
+<p><strong>A1.</strong> Diferencie props e state.</p>
+<p><strong>A2.</strong> Para lista grande: FlatList ou ScrollView com todos os filhos? Por quê?</p>
+<p><strong>A3.</strong> Por que usar JSON.stringify antes de guardar um objeto em AsyncStorage?</p>
+<p><strong>A4.</strong> Qual opção é relacional local: MongoDB remoto, SQLite, Base64 ou Redux?</p>
+<p><strong>A5.</strong> Após <code>const r = await fetch(url)</code>, como obter o corpo interpretado como JSON?</p>
+<p><strong>A6.</strong> Verdadeiro ou falso: detectar rede resolve os conflitos de Offline First.</p>
+<p><strong>A7.</strong> No Redux, quem calcula o próximo estado a partir de estado anterior e action?</p>
+<p><strong>A8.</strong> Base64 garante sigilo? Justifique.</p>
+<p><strong>A9.</strong> Diferencie <code>onPress={salvar}</code> e <code>onPress={salvar()}</code>.</p>
+<p><strong>A10.</strong> Cite os três modelos de navegação e a função de um deles.</p>
+<h2>5. Back-end — 11/11, 19h</h2>
+<p><strong>B1.</strong> Qual usa tags para representar dados: XML, JDBC, JMS ou Servlet?</p>
+<p><strong>B2.</strong> Diferencie Servlet e JSP.</p>
+<p><strong>B3.</strong> Para SELECT com JDBC: executeQuery ou executeUpdate?</p>
+<p><strong>B4.</strong> Relacione JPA, Hibernate e Spring Data JPA.</p>
+<p><strong>B5.</strong> Quem lê objeto do corpo: @RequestBody, @PathVariable ou @Entity?</p>
+<p><strong>B6.</strong> Verdadeiro ou falso: JMS e RabbitMQ são o mesmo produto.</p>
+<p><strong>B7.</strong> Para enviar logs a três filas independentes, qual exchange simples atende: fanout ou direct com uma única chave ligada a uma só fila?</p>
+<p><strong>B8.</strong> Qual é protocolo e qual é estilo arquitetural: SOAP e REST?</p>
+<p><strong>B9.</strong> No GraphQL, que operação altera dados e que função fornece valor de campo?</p>
+<p><strong>B10.</strong> Verdadeiro ou falso: uma API stateless não pode usar token de autenticação.</p><details id="respostas"><summary>Abrir gabarito comentado — responda antes de consultar</summary><h3>NoSQL</h3>
+<ul>
+<li><strong>N1: B.</strong> Neo4j é grafos; MongoDB documentos; Cassandra famílias de colunas; Redis chave-valor.</li>
+<li><strong>N2: B.</strong> -&gt;&gt; retorna texto; -&gt; retorna elemento JSON/JSONB.</li>
+<li><strong>N3: C.</strong> Flexibilidade não elimina organização/validação.</li>
+<li><strong>N4:</strong> seleciona documentos com nota maior ou igual a 7. Não altera notas.</li>
+<li><strong>N5:</strong> loja e mes formam a partition key; dia é clustering.</li>
+<li><strong>N6:</strong> grafos, com relacionamentos explícitos entre entidades.</li>
+<li><strong>N7:</strong> nomes de pessoas seguidas por pessoas correspondentes ao padrão. Pode repetir: não há DISTINCT e uma pessoa pode ter vários seguidores.</li>
+<li><strong>N8: B.</strong> Pedido/itens formam agregado; isso não garante ausência de duplicação.</li>
+<li><strong>N9:</strong> replicação mantém cópias; particionamento divide subconjuntos entre nós.</li>
+<li><strong>N10: Falso.</strong> A filtragem autorizada pode ser custosa.</li>
+</ul>
+<h3>Métodos Quantitativos</h3>
+<ul>
+<li><strong>M1:</strong> 2x+3y≤60. Acrescente x,y≥0 no modelo completo.</li>
+<li><strong>M2:</strong> x+y≥25; “pelo menos” é limite inferior.</li>
+<li><strong>M3:</strong> vértices (0,0), (3,0), (3,2), (1,4), (0,4); Z=0,12,18,16,12. Ótimo (3,2), Z=18.</li>
+<li><strong>M4:</strong> segunda linha, pois 8/2=4 e 3/1=3; menor razão admissível.</li>
+<li><strong>M5:</strong> min 10u+12v, com 2u+v≥5, u+3v≥4, u,v≥0. Matriz transposta e papéis de b/c trocados.</li>
+<li><strong>M6:</strong> aumento de 12 unidades no objetivo, nas condições dadas.</li>
+<li><strong>M7: Falso.</strong> Folga zero permite preço zero. Folga estritamente positiva exige preço zero.</li>
+<li><strong>M8:</strong> 10+40−35=15 unidades.</li>
+<li><strong>M9:</strong> 0,20x+0,50y≥0,30(x+y); equivale a y≥0,5x, com não negatividade.</li>
+<li><strong>M10:</strong> não. O preço 2 só se mantém até capacidade 5, fixados os outros limites. Com capacidade 6, ótimo (2,3), Z=12; ganho de 2, não 4.</li>
+</ul>
+<h3>LPS</h3>
+<ul>
+<li><strong>L1:</strong> engenharia do domínio: desenvolve para reuso e para a família.</li>
+<li><strong>L2:</strong> engenharia da aplicação: deriva produto concreto.</li>
+<li><strong>L3:</strong> variantes do ponto de variação.</li>
+<li><strong>L4:</strong> não; selecionar A exige B.</li>
+<li><strong>L5: B.</strong> Extrativa parte de sistemas existentes.</li>
+<li><strong>L6:</strong> documentar pontos, variantes, dependências/restrições e sua conexão com artefatos de desenvolvimento.</li>
+<li><strong>L7:</strong> necessidade da aplicação não completamente coberta pelos requisitos/ativos de domínio; exige avaliação de impacto.</li>
+<li><strong>L8: Falso.</strong> Configuração, integração e deltas precisam de testes de aplicação.</li>
+<li><strong>L9:</strong> 2^4=16 nas condições dadas.</li>
+<li><strong>L10:</strong> rastreabilidade entre variabilidade, requisitos, implementação e testes.</li>
+</ul>
+<h3>Android</h3>
+<ul>
+<li><strong>A1:</strong> props recebidas do pai; state gerenciado pelo componente para representar dados mutáveis.</li>
+<li><strong>A2:</strong> FlatList, por virtualização; ScrollView com todos os filhos os renderiza juntos.</li>
+<li><strong>A3:</strong> AsyncStorage guarda valores textuais; stringify serializa e parse reconstrói na leitura.</li>
+<li><strong>A4:</strong> SQLite.</li>
+<li><strong>A5:</strong> await r.json(); confira também r.ok e trate falhas.</li>
+<li><strong>A6: Falso.</strong> É preciso sincronizar e lidar com duplicações/conflitos.</li>
+<li><strong>A7:</strong> reducer, calculando novo estado sem modificar diretamente o anterior.</li>
+<li><strong>A8:</strong> não; é codificação reversível sem chave secreta.</li>
+<li><strong>A9:</strong> a primeira passa callback; a segunda executa a função naquele momento e passa seu retorno.</li>
+<li><strong>A10:</strong> stack, tabs, drawer; exemplo: stack organiza avanço/retorno em pilha.</li>
+</ul>
+<h3>Back-end</h3>
+<ul>
+<li><strong>B1:</strong> XML; os outros são tecnologias de acesso/mensageria/processamento.</li>
+<li><strong>B2:</strong> Servlet processa requisições em Java; JSP é apresentação processada no servidor e traduzida para Servlet.</li>
+<li><strong>B3:</strong> executeQuery; executeUpdate serve para operações como INSERT/UPDATE/DELETE, entre outros comandos adequados.</li>
+<li><strong>B4:</strong> JPA especifica; Hibernate implementa; Spring Data JPA abstrai repositórios usando JPA.</li>
+<li><strong>B5:</strong> @RequestBody. @PathVariable captura parte da URL; @Entity marca entidade JPA.</li>
+<li><strong>B6: Falso.</strong> JMS é API/especificação; RabbitMQ é broker.</li>
+<li><strong>B7:</strong> fanout, com três filas vinculadas; cada uma recebe a publicação.</li>
+<li><strong>B8:</strong> SOAP protocolo; REST estilo arquitetural.</li>
+<li><strong>B9:</strong> mutation altera; resolver fornece valor do campo.</li>
+<li><strong>B10: Falso.</strong> Token pode acompanhar cada requisição, fornecendo contexto suficiente.</li>
+</ul>
+<h2>Como usar seu resultado</h2>
+<p>Registre acertos por disciplina: NoSQL __/10; Métodos __/10; LPS __/10; Android __/10; Back-end __/10. Esses números medem apenas este treino, sem estimar nota oficial.</p>
+<p>Para cada erro, escreva uma frase: “Confundi ___ com ___; a regra correta é ___”. Depois refaça a questão sem consulta. Em Métodos, refaça as contas e confira unidades e sinais.</p></details></article><article id="fontes"><h1>Fontes e cobertura</h1>
+<p>28 PDFs; 1048 páginas. Extração textual concluída para todos.</p>
+<p>Os números abaixo são páginas do arquivo PDF, não numeração impressa. O guia usa os objetivos e tópicos dos arquivos; seus exemplos e questões são autorais. Não houve consulta ao portal de provas.</p>
+<h2>Banco de Dados</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th style="text-align: right;">Páginas</th>
+<th>Conteúdo identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aula 10 - Conteúdo.pdf</td>
+<td style="text-align: right;">13</td>
+<td>Banco de Dados NoSQL Aula 9: Modelo de dados NoSQL baseado em grafos – parte I Apresentação</td>
+</tr>
+<tr>
+<td>Aula 11 - Conteúdo.pdf</td>
+<td style="text-align: right;">14</td>
+<td>Banco de Dados NoSQL Aula 10: Modelo de dados NoSQL baseado em grafos – parte II</td>
+</tr>
+<tr>
+<td>Aula 2 - Conteúdo.pdf</td>
+<td style="text-align: right;">10</td>
+<td>Banco de Dados NoSQL Aula 1: Introdução a NoSQL Apresentação</td>
+</tr>
+<tr>
+<td>Aula 3 - Conteúdo.pdf</td>
+<td style="text-align: right;">12</td>
+<td>Banco de Dados NoSQL Aula 2: Modelos de bancos de dados NoSQL Apresentação</td>
+</tr>
+<tr>
+<td>Aula 4 - Conteúdo.pdf</td>
+<td style="text-align: right;">14</td>
+<td>Banco de Dados NoSQL Aula 3: Modelo de dados NoSQL baseado em chave-valor – parte I</td>
+</tr>
+<tr>
+<td>Aula 5 - Conteúdo.pdf</td>
+<td style="text-align: right;">17</td>
+<td>Banco de Dados NoSQL Aula 4: Modelo de dados NoSQL baseado em chave-valor – parte II</td>
+</tr>
+<tr>
+<td>Aula 6 - Conteúdo.pdf</td>
+<td style="text-align: right;">17</td>
+<td>Banco de Dados NoSQL Aula 5: Modelo de dados NOSQL orientado a documentos - parte I</td>
+</tr>
+<tr>
+<td>Aula 7 - Conteúdo.pdf</td>
+<td style="text-align: right;">15</td>
+<td>Banco de Dados NoSQL Aula 6: Modelo de dados NoSQL orientado a documentos – parte II</td>
+</tr>
+<tr>
+<td>Aula 8 - Conteúdo.pdf</td>
+<td style="text-align: right;">13</td>
+<td>Banco de Dados NoSQL Aula 7: Modelo de dados NoSQL baseado em colunas – parte I Apresentação</td>
+</tr>
+<tr>
+<td>Aula 9 - Conteúdo.pdf</td>
+<td style="text-align: right;">13</td>
+<td>Banco de Dados NoSQL Aula 8: Modelo de dados NoSQL baseado em colunas – parte II</td>
+</tr>
+</tbody>
+</table>
+<p>Origem: apostilas locais fornecidas pelo estudante.</p>
+<h2>Desenvolvimento de Back-end</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th style="text-align: right;">Páginas</th>
+<th>Conteúdo identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tema 2 - Tecnologias de Transmissão de Dados em Sistemas Web.pdf</td>
+<td style="text-align: right;">38</td>
+<td>Tecnologias de transmissão de dados em sistemas web</td>
+</tr>
+<tr>
+<td>Tema 3 - Programação Servidor Com Java.pdf</td>
+<td style="text-align: right;">47</td>
+<td>Programação Servidor com JAVA A criação de sistemas Java para o ambiente Web, com descrição do ambiente de execução e construção</td>
+</tr>
+<tr>
+<td>Tema 4 - Persistência Com Spring Data.pdf</td>
+<td style="text-align: right;">71</td>
+<td>Persistência com Spring Data Utilização do framework Spring para persistência de dados em bases relacionais e NoSQL, com base em exemplos do PostgreSQL e do MongoDB dentro da</td>
+</tr>
+<tr>
+<td>Tema 5 - Serviços de Mensageria.pdf</td>
+<td style="text-align: right;">51</td>
+<td>Serviços de mensageria Tecnologias relacionadas à comunicação de sistemas para fins de integração, com ênfase em sistemas de</td>
+</tr>
+<tr>
+<td>Tema 6 - Web Services em Java.pdf</td>
+<td style="text-align: right;">51</td>
+<td>Web Services em Java Compreender a interface para integração de aplicações, Web Services e as tecnologias SOAP e REST, com</td>
+</tr>
+</tbody>
+</table>
+<p>Origem: apostilas locais fornecidas pelo estudante.</p>
+<h2>Linhas de Produtos de Software</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th style="text-align: right;">Páginas</th>
+<th>Conteúdo identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tema 2 - Conceitos de Linhas de Produtos de Software (lps).pdf</td>
+<td style="text-align: right;">34</td>
+<td>Conceitos de Linhas de Produtos de Software (LPS)</td>
+</tr>
+<tr>
+<td>Tema 3 - Variabilidade em Lps.pdf</td>
+<td style="text-align: right;">48</td>
+<td>Variabilidade em LPS Documentação e gerenciamento da variabilidade como uma das principais atividades que caracterizam a</td>
+</tr>
+<tr>
+<td>Tema 4 - Engenharia do Domínio.pdf</td>
+<td style="text-align: right;">49</td>
+<td>Engenharia de domínio Identificação, documentação e produção na engenharia de domínio da semelhança e da variabilidade para</td>
+</tr>
+<tr>
+<td>Tema 5 - Engenharia da Aplicação.pdf</td>
+<td style="text-align: right;">50</td>
+<td>Engenharia de aplicação Engenharia de requisitos de aplicação, documentando os artefatos de requisitos para uma aplicação</td>
+</tr>
+</tbody>
+</table>
+<p>Origem: apostilas locais fornecidas pelo estudante.</p>
+<h2>Métodos Quantitativos</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th style="text-align: right;">Páginas</th>
+<th>Conteúdo identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tema 2 - A Pesquisa Operacional Como Ferramenta de Apoio à Decisão.pdf</td>
+<td style="text-align: right;">56</td>
+<td>Pesquisa operacional como ferramenta para tomada de decisão</td>
+</tr>
+<tr>
+<td>Tema 3 - Aplicações da Programação Linear.pdf</td>
+<td style="text-align: right;">42</td>
+<td>Aplicações da programação linear Você vai entender a modelagem de problemas clássicos de programação linear, como fabricação versus</td>
+</tr>
+<tr>
+<td>Tema 4 - Dualidade e Análise de Sensibilidade.pdf</td>
+<td style="text-align: right;">46</td>
+<td>DESCRIÇÃO O problema dual, o método dual-simplex e a relevância da análise de sensibilidade.</td>
+</tr>
+<tr>
+<td>Tema 5 - Método Simplex.pdf</td>
+<td style="text-align: right;">74</td>
+<td>Método simplex Você vai estudar a programação linear (PL), uma técnica de otimização que aponta as relações entre</td>
+</tr>
+</tbody>
+</table>
+<p>Origem: apostilas locais fornecidas pelo estudante.</p>
+<h2>Programação para Dispositivos Móveis em Android</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th style="text-align: right;">Páginas</th>
+<th>Conteúdo identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tema 2 - Sintaxe e Componentes do React Native.pdf</td>
+<td style="text-align: right;">35</td>
+<td>Sintaxe e componentes do React Native Apresentação dos conceitos, das técnicas e das ferramentas ligadas ao desenvolvimento de aplicativos</td>
+</tr>
+<tr>
+<td>Tema 3 - Interface Gráfica Com React Native.pdf</td>
+<td style="text-align: right;">46</td>
+<td>Interface gráﬁca com React Native Apresentação dos componentes de interface gráfica disponíveis no framework de desenvolvimento mobile</td>
+</tr>
+<tr>
+<td>Tema 4 - Persistência de Dados Com React Native.pdf</td>
+<td style="text-align: right;">54</td>
+<td>Persistência de dados com React Native</td>
+</tr>
+<tr>
+<td>Tema 5 - Conexão Remota Com React Native.pdf</td>
+<td style="text-align: right;">36</td>
+<td>Conexão Remota com React Native Componentes e recursos para conexão remota presentes no framework de desenvolvimento para</td>
+</tr>
+<tr>
+<td>Tema 6 - Tópicos Avançados em React Native.pdf</td>
+<td style="text-align: right;">82</td>
+<td>Tópicos avançados em React Native Utilização das arquiteturas MVC, Flux e Redux nos aplicativos React Native, implementação de criptografia</td>
+</tr>
+</tbody>
+</table>
+<p>Origem: apostilas locais fornecidas pelo estudante.</p>
+<h2>Limites da revisão</h2>
+<p>Texto extraído pode perder diagramas, fórmulas e conteúdo de vídeos. Não se afirma inspeção visual de cada página. Arquivos de Tema 1 não foram encontrados. Os PDFs de NoSQL estão nomeados uma aula à frente dos títulos internos. No arquivo Aula 11, página 2, há trecho estranho ao tema (Unreal Engine), excluído do resumo.</p>
+<p>Correções conceituais destacadas: folga zero não implica necessariamente preço-sombra positivo; 3^10 = 59.049.</p></article></main><script>window.addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true));</script></html>
